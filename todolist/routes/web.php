@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+$environment = App::environment();
+
 
 Route::get('/', function () {
     return view('home');
 });
+
+Route::post('/inserirTarefa', 'App\Http\Controllers\TarefasController@setTodoList')->name('InserirTarefa');
+Route::get('/obterLista','App\Http\Controllers\TarefasController@getTodoList')->name('ObterListaTarefas');
+
