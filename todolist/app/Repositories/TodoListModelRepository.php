@@ -10,7 +10,9 @@ class TodoListModelRepository extends BaseRepository
     protected $fieldSearchable = [
         'id',
         'nome',
-        'status'
+        'status',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     public function getFieldsSearchable(): array

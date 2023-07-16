@@ -11,5 +11,8 @@ Route::get('/', function () {
 });
 
 Route::post('/inserirTarefa', 'App\Http\Controllers\TarefasController@setTodoList')->name('InserirTarefa');
-Route::get('/obterLista','App\Http\Controllers\TarefasController@getTodoList')->name('ObterListaTarefas');
+Route::post('/atualizarTarefa/{id}','App\Http\Controllers\TarefasController@updateItemTodoList')->name('AtualizarTarefa');
+Route::get('/obterListaTarefas','App\Http\Controllers\TarefasController@getTodoList')->name('ObterListaTarefas');
+Route::get('/removerItemTarefa/{id}','App\Http\Controllers\TarefasController@removeItemTodoList')->name('RemoverItemTarefa');
+Route::post('/removerTarefas','App\Http\Controllers\TarefasController@removeTodoList')->name('RemoverTarefas');
 

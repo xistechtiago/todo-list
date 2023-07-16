@@ -16,7 +16,9 @@ class TodoListModel extends Model
     protected $casts = [
         'id'  => 'integer',
         'nome' => 'string',
-        'status' => 'string'
+        'status' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     public static array $rules = [
